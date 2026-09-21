@@ -45,3 +45,28 @@ var expect = function(val) {
  * expect(5).toBe(5); // true
  * expect(5).notToBe(5); // throws "Equal"
  */
+
+
+
+
+
+
+/**
+ * @param {integer} init
+ * @return { increment: Function, decrement: Function, reset: Function }
+ */
+var createCounter = function(init) {
+     let original = init;
+    return {
+        increment: function() {
+            return ++init
+        },
+        decrement: function() {
+            return --init
+        },
+        reset: function() {
+            init = original;
+            return init;
+        }
+    }
+};
